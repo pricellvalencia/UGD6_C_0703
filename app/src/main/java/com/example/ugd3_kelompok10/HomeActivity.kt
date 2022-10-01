@@ -3,8 +3,10 @@ package com.example.ugd3_kelompok10
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     lateinit var bottomNav : BottomNavigationView
@@ -34,6 +36,11 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btnNotifications.setOnClickListener(View.OnClickListener {
+            val moveNotifications = Intent(this@HomeActivity, NotificationsActivity::class.java)
+            startActivity(moveNotifications)
+        })
     }
 
     private  fun loadFragment(fragment: Fragment){
